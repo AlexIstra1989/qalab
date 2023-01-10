@@ -1,5 +1,8 @@
-.header {
- padding-top: rem(20);
+.header { 
+ background: linear-gradient(10.1deg, #000000 2.08%, rgba(0, 0, 0, 0) 91.71%);
+ z-index: 999;
+ //transform: matrix(1, 0, 0, -1, 0, 0);
+ //padding-top: rem(20);
  // .header__inner
  &__inner {
   display: flex;
