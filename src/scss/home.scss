@@ -10,6 +10,46 @@
   height: 100%;
   display: flex;
   align-items: center;
+  position: relative;
+  &::before {
+   @include pseudo;
+   @include background(url("../img/main-block/pseudo.png"));
+   @include adaptiveValue("width", 1041, 260);
+   @include adaptiveValue("height", 1015, 260);
+   left: -26%;
+   top: -6%;
+   z-index: 195;
+   @media (max-width: 1550px) {
+    left: -33%;
+   }
+   @media (max-width: 1350px) {
+    left: -38%;
+   }
+   @media (max-width: 1250px) {
+    top: 10%;
+    left: -42%;
+   }
+   @media (max-width: $tablet) {
+    top: 36%;
+   }
+   @media (max-width: $mobileSmall) {
+    left: -43%;
+   }
+  }
+  &::after {
+   @include pseudo;
+   @include background(url("../img/main-block/pseudo-right.png"));
+   @include adaptiveValue("width", 900, 270);
+   @include adaptiveValue("height", 680, 200);
+   width: rem(900);
+   height: rem(680);
+   right: 0;
+   top: 0;
+   @media (max-width: $mobileSmall) {
+    left: 5%;
+    top: -5%;
+   }
+  }
  }
  // .main-block-container 
  &__container {
@@ -23,19 +63,22 @@
  }
  // .main-block__box
  &__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //z-index: 200;
  }
  // .main-block__logo
  &__logo {
-  margin-bottom: rem(45);
+  max-width: rem(565);
+  width: 100%;
+  @include adaptiveValue("margin-bottom", 45, 13);
  }
  // .main-block__title
  &__title {
   font-weight: 700;
-  @include adaptiveValue("font-size", 48, 34);
+  @include adaptiveValue("font-size", 48, 16);
   line-height: math.div(46, 48);
- }
- // .main-block__social
- &__social {
  }
 }
 //=========================================================================================================================================
@@ -45,19 +88,21 @@
  gap: rem(25);
  position: absolute;
  right: rem(40);
- // .social__item
- &__item {
+ z-index: 192;
+ @media (max-width: $mobile) {
+  display: none;
  }
  // .social__link
  &__link {
+  cursor: pointer;
+  transition: all 0.8s;
+  &:hover {
+   path {
+    fill: #CDDE00;
+   }
+  }
  }
- // .social__logo
- &__logo {
- }
-}
-
-
-
+} 
 //====================================================================================================
 
 //====================================================================================================

@@ -1,13 +1,15 @@
 .header { 
  background: linear-gradient(10.1deg, #000000 2.08%, rgba(0, 0, 0, 0) 91.71%);
- z-index: 999;
- //transform: matrix(1, 0, 0, -1, 0, 0);
- //padding-top: rem(20);
+ z-index: 199;
+ @media (max-width: 1115px) { 
+  background: none;
+ }
  // .header__inner
  &__inner {
   display: flex;
   align-items: center;
   justify-content: center;
+  
   @include adaptiveValue("gap", 60, 20);
   height: rem(86);
   @media (max-width: 1115px) {
@@ -21,11 +23,15 @@
  // .header__logo
  &__logo {
   display: block;
-  z-index: 111;
+  z-index: 999999;
   margin-top: rem(20);
   @media (max-width: 1115px) {
    text-align: center;
    margin-bottom: rem(20);
+   margin-top: 0;
+  }
+  @media (max-width: 900px) {
+   margin-top: rem(50);
   }
  }
  // .header__list
@@ -70,7 +76,7 @@
    overflow: auto;
    background-color: #000;
    padding: rem(65) rem(15) rem(50) rem(15) ;
-   z-index: 4;
+   z-index: 310;
    transition: top 0.8s;
    .menu-open & {
     top: 0;
@@ -87,7 +93,7 @@
 		width: rem(30);
 		height: rem(18);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 3000;
 		span,
 		&::before,
 		&::after {
