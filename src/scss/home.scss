@@ -206,3 +206,61 @@
  }
 }
 //====================================================================================================
+.artists {
+ @include adaptiveValue("padding-top", 100, 50);
+ @include adaptiveValue("padding-bottom", 70, 35);
+ background-color: $bgColor;
+ position: relative;
+ &::before {
+  @include pseudo;
+  @include background(url("../img/artists/pseudo.png"));
+  left: -9%;
+  top: 8%;
+  width: rem(2189);
+  height: rem(495);
+ }
+ // .artists__title
+ &__title {
+  margin-bottom: rem(20);
+ }
+ // .artists__subtitle
+ &__subtitle {
+  @include adaptiveValue("margin-bottom", 100, 40);
+ }
+ // .artists__slider
+ &__slider {
+
+ }
+ // .artists__wrapper
+ &__wrapper {
+ }
+ // .artists__slide
+ &__slide {
+ }
+ // .artists__item
+ &__item {
+ }
+ // .artists__name
+ &__name {
+  @include adaptiveValue("font-size", 32, 16);
+  line-height: math.div(32, 32);
+  color: $accentColor;
+  margin-bottom: rem(2);
+ }
+ // .artists__image
+ &__image {
+  width: 100%;
+ }
+}
+.title {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+//====================================================================================================
+//====================================================================================================
+//====================================================================================================
