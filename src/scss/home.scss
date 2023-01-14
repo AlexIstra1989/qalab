@@ -324,38 +324,39 @@
  #speaker {
   display: none;
  }
- .player audio {
-  display: none;
- }
- .player input[type="range"] {
-  -webkit-appearance: none;
-height: 5px;
-border-radius: 5px;
-background: white;
-outline: none;
-opacity: 0.7;
--webkit-transition: .2s;
-transition: opacity .2s;
+}
+//=======================================================================================================================
+.player audio {
+ display: none;
+}
+.player input[type="range"] {
+ -webkit-appearance: none;
+ height: 5px;
+ border-radius: 5px;
+ background: white;
+ outline: none;
+ opacity: 0.7;
+ -webkit-transition: .2s;
+ transition: opacity .2s;
 }
 .player input[type="range"]::-webkit-slider-thumb {
 -webkit-appearance: none;
-appearance: none;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background: #4CAF50;
-cursor: pointer;
+ appearance: none;
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: #4CAF50;
+ cursor: pointer;
 }
 .player input[type="range"]::-moz-range-thumb {
-width: 10px;
-height: 10px;
-border-radius: 50%;
-background: #4CAF50;
-cursor: pointer;
+ width: 10px;
+ height: 10px;
+ border-radius: 50%;
+ background: #4CAF50;
+ cursor: pointer;
 }
 .play-btn {
-margin-left: auto;
-}
+ margin-left: auto;
 }
 //======================================================================================================
 .music-services {
@@ -386,4 +387,133 @@ margin-left: auto;
  }
 }
 //====================================================================================================
+.qalabaration {
+ @include adaptiveValue("padding-top", 100, 50);
+ @include adaptiveValue("padding-bottom", 70, 35);
+ background: url("../img/qalabaration/image.png"), $bgColor;
+ background-repeat: no-repeat;
+ background-position: right;
+ background-size: contain;
+ @media (max-width: $mobileSmall) {
+  background-position: 100px 50px;
+ }
+ // .qalabaration__inner
+ &__inner {
+  @include adaptiveValue("font-size", 32, 16);
+  line-height: math.div(32, 32);
+  max-width: rem(750);
+  width: 100%;
+  position: relative;
+ }
+ // .qalabaration__title
+ &__title {
+  display: inline-block;
+  position: relative;
+  &::after {
+   @include pseudo;
+   @include background(url("../img/icons/qalabaration-logo.svg"));
+   right: rem(-100);
+   top: 50%;
+   transform: translateY(-50%);
+   width: rem(78);
+   height: rem(47);
+   @media (max-width: $mobileSmall) {
+    left: 0;
+    top: rem(60);
+   }
+  }
+  @media (max-width: $mobileSmall) {
+   margin-bottom: rem(100);
+  }
+ }
+ // .qalabaration__text
+ &__text {
+  @include adaptiveValue("margin-bottom", 200, 100);
+  p:first-child {
+   margin-bottom: rem(20);
+  }
+ }
+ // .qalabaration__link
+ &__link {
+  display: block;
+  text-align: center;
+  position: relative;
+  &::before {
+   @include pseudo;
+   @include background(url("../img/qalabaration/pseudo-link.png"));
+   left: 19%;
+   bottom: -195%;
+   width: rem(383);
+   height: rem(240);
+   @media (max-width: $tablet) {
+    left: 27%;
+    bottom: -220%;
+    width: rem(300);
+    height: rem(186);
+   }
+   @media (max-width: 678px) {
+    left: 25%;
+    bottom: -290%;
+    width: rem(272);
+    height: rem(170);
+   }
+   @media (max-width: 550px) {
+    left: 16%;
+   }
+   @media (max-width: 500px) {
+    left: 15%;
+    bottom: -290%;
+    width: 250px;
+    height: 155px;
+   }
+   @media (max-width: 376px) {
+    left: 17%;
+    bottom: -265%;
+    width: rem(198);
+    height: rem(124);
+   }
+  }
+  @media (max-width: 850px) {
+   margin-bottom: rem(80);
+  }
+ }
+ // .qalabaration__hashtags
+ &__hashtags {
+  @media (max-width: 850px) {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: rem(10);
+  }
+ }
+ // .qalabaration__opinion
+ &__opinion {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  @media (max-width: 850px) {
+   position: relative;
+  }
+ }
+ // .qalabaration__emotion
+ &__emotion {
+  position: absolute;
+  left: 0;
+  bottom: -7%;
+  @media (max-width: 850px) {
+   position: relative;
+   margin-left: auto;
+  }
+ }
+ // .qalabaration__voting
+ &__voting {
+  position: absolute;
+  right: -10%;
+  bottom: -5%;
+  @media (max-width: 850px) {
+   position: relative;
+   right: 0;
+  }
+ }
+}
 //====================================================================================================

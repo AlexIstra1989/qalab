@@ -77,14 +77,6 @@ body::after {
    display: block;
   }
  }
- // .popup__list-link
- &__list-link {
-  transition: all 0.5s;
-  &:hover {
-   font-weight: 700;
-   border-bottom: rem(1) solid red;
-  } 
- }
  &__image {
   width: rem(350);
   height: rem(300);
