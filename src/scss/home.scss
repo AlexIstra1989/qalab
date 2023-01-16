@@ -517,13 +517,21 @@
 .judges {
  @include adaptiveValue("padding-top", 100, 50);
  @include adaptiveValue("padding-bottom", 290, 35);
- background: (url("../img/judges/pseudo.png")) ,$bgColor;
- background-repeat: no-repeat;
- background-size: contain;
- background-position: 0 120px;
+ background-color: $bgColor;
  text-align: center;
  @include adaptiveValue("font-size", 32, 16);
  line-height: math.div(32, 32);
+ position: relative;
+ &::before {
+  @media (min-width: 1610px) and (max-width: 2020px) {
+   @include pseudo;
+   @include background(url("../img/judges/pseudo.png"));
+   left: -10%;
+   top: 17%;
+   width: rem(2200);
+   height: rem(920);
+  }
+ }
  // .judges__subtitle
  &__subtitle {
   @include adaptiveValue("font-size", 32, 16);

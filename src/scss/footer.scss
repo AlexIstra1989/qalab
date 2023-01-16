@@ -1,3 +1,73 @@
-//====================================================================================================
-
-//====================================================================================================
+.footer {
+ background-image: url("../img/footer/bg.png");
+ padding-top: rem(55);
+ padding-bottom: rem(40);
+ background-color: rgba(205,222,0.5);
+ background-blend-mode: multiply;
+ position: relative;
+ // .footer__title
+ &__title {
+  text-align: center;
+ }
+ // .footer__info
+ &__info {
+  display: flex;
+  flex-direction: column;
+  gap: rem(50);
+  @include adaptiveValue("font-size", 24, 16);
+  line-height: math.div(24, 24);
+  margin-bottom: rem(50);
+ }
+ // .footer__info-name
+ &__info-name {
+  display: block;
+  margin-bottom: rem(5);
+ }
+ // .footer__info-mail
+ &__info-mail {
+  font-weight: 700;
+  border-bottom: rem(1) solid $mainColor;
+ }
+ // .footer__box 
+ &__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: rem(40);
+  @media (max-width: $mobile) {
+   justify-content: center;
+  }
+ }
+ // .footer__social-title
+ &__social-title {
+  display: block;
+  @include adaptiveValue("font-size", 24, 16);
+  line-height: math.div(24, 24);
+  margin-bottom: rem(10);
+  @media (max-width: $mobile) {
+   display: none;
+  }
+ }
+ // .footer__bottom
+ &__bottom {
+  text-align: right;
+ }
+ // .footer__name
+ &__name {
+  font-weight: 700;
+  @include adaptiveValue("font-size", 100, 37);
+  line-height: math.div(100, 100);
+ }
+ //====================================================================================================
+ .social {
+  position: relative;
+  flex-direction: row;
+  right: 0;
+  @media (max-width: $mobile) {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 25%;
+    right: 10%;
+  }
+ }
+}
